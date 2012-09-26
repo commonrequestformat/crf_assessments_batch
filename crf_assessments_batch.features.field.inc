@@ -232,7 +232,6 @@ function crf_assessments_batch_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'humanitarianresponse_i18n_allowed_values',
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
