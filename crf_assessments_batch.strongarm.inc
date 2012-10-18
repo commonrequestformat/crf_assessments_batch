@@ -13,9 +13,30 @@ function crf_assessments_batch_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_node_assessments_batch';
-  $strongarm->value = '1';
-  $export['auto_entitylabel_node_assessments_batch'] = $strongarm;
+  $strongarm->name = 'additional_settings__active_tab_assessment';
+  $strongarm->value = 'edit-print';
+  $export['additional_settings__active_tab_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_assessments_batch';
+  $strongarm->value = 'edit-print';
+  $export['additional_settings__active_tab_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'autosave_assessment';
+  $strongarm->value = 0;
+  $export['autosave_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'autosave_assessments_batch';
+  $strongarm->value = 0;
+  $export['autosave_assessments_batch'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -69,19 +90,103 @@ function crf_assessments_batch_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_assessment';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_assessments_batch';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_diff_inline_node_assessment';
+  $strongarm->value = 0;
+  $export['diff_show_diff_inline_node_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_diff_inline_node_assessments_batch';
+  $strongarm->value = 0;
+  $export['diff_show_diff_inline_node_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_assessment';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_assessments_batch';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_inline_node_assessment';
+  $strongarm->value = 'diff_complete';
+  $export['diff_view_mode_inline_node_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_inline_node_assessments_batch';
+  $strongarm->value = 'diff_complete';
+  $export['diff_view_mode_inline_node_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_assessment';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_assessments_batch';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_standard_node_assessment';
+  $strongarm->value = 0;
+  $export['diff_view_mode_standard_node_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_standard_node_assessments_batch';
+  $strongarm->value = 0;
+  $export['diff_view_mode_standard_node_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__assessments_batch';
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '-5',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '30',
         ),
         'workflow' => array(
-          'weight' => '5',
+          'weight' => '10',
         ),
       ),
       'display' => array(),
@@ -138,9 +243,23 @@ function crf_assessments_batch_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_assessment';
+  $strongarm->value = 0;
+  $export['print_display_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'print_display_assessments_batch';
   $strongarm->value = 0;
   $export['print_display_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_comment_assessment';
+  $strongarm->value = 0;
+  $export['print_display_comment_assessment'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -152,9 +271,23 @@ function crf_assessments_batch_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_urllist_assessment';
+  $strongarm->value = 0;
+  $export['print_display_urllist_assessment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'print_display_urllist_assessments_batch';
   $strongarm->value = 0;
   $export['print_display_urllist_assessments_batch'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'save_continue_assessments_batch';
+  $strongarm->value = 'Save and add fields';
+  $export['save_continue_assessments_batch'] = $strongarm;
 
   return $export;
 }
