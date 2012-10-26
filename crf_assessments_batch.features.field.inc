@@ -347,7 +347,6 @@ function crf_assessments_batch_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
-            'php_code' => 'php_code',
             'plain_text' => 'plain_text',
             'simple' => 'simple',
           ),
@@ -361,9 +360,6 @@ function crf_assessments_batch_field_default_fields() {
               'full_html' => array(
                 'weight' => '0',
               ),
-              'php_code' => array(
-                'weight' => '11',
-              ),
               'plain_text' => array(
                 'weight' => '10',
               ),
@@ -373,7 +369,6 @@ function crf_assessments_batch_field_default_fields() {
             ),
           ),
         ),
-        'entity_translation_sync' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
