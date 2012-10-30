@@ -107,7 +107,7 @@ function crf_assessments_batch_field_default_fields() {
   $fields['node-assessments_batch-field_assessments'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_assessments',
@@ -136,6 +136,7 @@ function crf_assessments_batch_field_default_fields() {
           'assessments_batch' => 0,
           'cluster_objectives' => 0,
           'contact' => 0,
+          'contacts_upload' => 0,
           'crf_request' => 0,
           'hr_sitrep' => 0,
           'indicator_data' => 0,
