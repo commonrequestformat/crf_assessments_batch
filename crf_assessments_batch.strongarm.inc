@@ -21,7 +21,7 @@ function crf_assessments_batch_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_assessments_batch';
-  $strongarm->value = 'edit-print';
+  $strongarm->value = 'edit-workflow';
   $export['additional_settings__active_tab_assessments_batch'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -35,7 +35,7 @@ function crf_assessments_batch_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'autosave_assessments_batch';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['autosave_assessments_batch'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -222,7 +222,8 @@ function crf_assessments_batch_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_assessments_batch';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_assessments_batch'] = $strongarm;
 
