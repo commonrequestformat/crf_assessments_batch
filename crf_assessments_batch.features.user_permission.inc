@@ -36,7 +36,8 @@ function crf_assessments_batch_user_default_permissions() {
     'name' => 'delete any assessments_batch content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'manager',
+      1 => 'editor',
+      2 => 'manager',
     ),
     'module' => 'node',
   );
@@ -67,7 +68,8 @@ function crf_assessments_batch_user_default_permissions() {
     'name' => 'edit any assessments_batch content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'manager',
+      1 => 'editor',
+      2 => 'manager',
     ),
     'module' => 'node',
   );

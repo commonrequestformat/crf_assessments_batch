@@ -104,7 +104,7 @@ function crf_assessments_batch_views_default_views() {
   $handler->display->display_options['fields']['field_locations']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_locations']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
-  /* Field: Content: Organization(s) */
+  /* Field: Content: Source */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
