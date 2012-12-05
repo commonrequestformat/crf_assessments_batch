@@ -76,7 +76,7 @@ function crf_assessments_batch_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 17,
+          'weight' => '17',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -107,7 +107,7 @@ function crf_assessments_batch_field_default_fields() {
   $fields['node-assessments_batch-field_assessments'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_assessments',
@@ -115,45 +115,39 @@ function crf_assessments_batch_field_default_fields() {
         'type' => '0',
       ),
       'foreign keys' => array(
-        'nid' => array(
+        'node' => array(
           'columns' => array(
-            'nid' => 'nid',
+            'target_id' => 'nid',
           ),
           'table' => 'node',
         ),
       ),
       'indexes' => array(
-        'nid' => array(
-          0 => 'nid',
+        'target_id' => array(
+          0 => 'target_id',
         ),
       ),
       'locked' => '0',
-      'module' => 'node_reference',
+      'module' => 'entityreference',
       'settings' => array(
-        'entity_translation_sync' => FALSE,
-        'referenceable_types' => array(
-          'assessment' => 'assessment',
-          'assessments_batch' => 0,
-          'cluster_objectives' => 0,
-          'contact' => 0,
-          'contacts_upload' => 0,
-          'crf_request' => 0,
-          'hr_sitrep' => 0,
-          'indicator_data' => 0,
-          'indicator_data_batch' => 0,
-          'indicator_definition' => 0,
-          'link' => 0,
-          'page' => 0,
-          'sectoral_analysis' => 0,
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'assessment' => 'assessment',
+          ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => '',
-          'view_name' => '',
-        ),
+        'target_type' => 'node',
       ),
       'translatable' => '0',
-      'type' => 'node_reference',
+      'type' => 'entityreference',
     ),
     'field_instance' => array(
       'bundle' => 'assessments_batch',
@@ -163,13 +157,14 @@ function crf_assessments_batch_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'node_reference',
+          'module' => 'entityreference',
           'settings' => array(
             'diff_custom' => 0,
             'diff_custom_settings' => array(),
+            'link' => FALSE,
           ),
-          'type' => 'node_reference_default',
-          'weight' => 2,
+          'type' => 'entityreference_label',
+          'weight' => 4,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -179,28 +174,27 @@ function crf_assessments_batch_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
+      'entityconnect_unload_add' => '0',
+      'entityconnect_unload_edit' => '0',
       'field_name' => 'field_assessments',
       'label' => 'Assessments',
       'required' => 0,
       'settings' => array(
-        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'node_reference',
+        'module' => 'entityreference',
         'settings' => array(
-          'autocomplete_match' => 'contains',
-          'autocomplete_path' => 'node_reference/autocomplete',
-          'references_dialog_add' => 1,
-          'references_dialog_edit' => 1,
-          'references_dialog_search' => 0,
-          'references_dialog_search_view' => '',
+          'match_operator' => 'CONTAINS',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'path' => '',
           'size' => '60',
         ),
-        'type' => 'node_reference_autocomplete',
-        'weight' => '3',
+        'type' => 'entityreference_autocomplete',
+        'weight' => '4',
       ),
+      'workbench_access_field' => 0,
     ),
   );
 
@@ -257,7 +251,7 @@ function crf_assessments_batch_field_default_fields() {
             'diff_custom_settings' => array(),
           ),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -279,7 +273,7 @@ function crf_assessments_batch_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -330,7 +324,7 @@ function crf_assessments_batch_field_default_fields() {
             'diff_custom_settings' => array(),
           ),
           'type' => 'text_default',
-          'weight' => 3,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -380,7 +374,7 @@ function crf_assessments_batch_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -451,7 +445,7 @@ function crf_assessments_batch_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -473,7 +467,7 @@ function crf_assessments_batch_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );

@@ -83,11 +83,10 @@ function crf_assessments_batch_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Content: Assessments (field_assessments) */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['field_assessments_nid']['id'] = 'field_assessments_nid';
   $handler->display->display_options['relationships']['field_assessments_nid']['table'] = 'field_data_field_assessments';
   $handler->display->display_options['relationships']['field_assessments_nid']['field'] = 'field_assessments_nid';
-  $handler->display->display_options['relationships']['field_assessments_nid']['delta'] = '-1';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -277,7 +276,7 @@ function crf_assessments_batch_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('field_assessments'),
+    t('field_assessments_nid'),
     t('Assessment Title'),
     t('Geographical Area(s) '),
     t('Leading/Coordinating Organizations'),
