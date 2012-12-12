@@ -10,14 +10,14 @@
 function crf_assessments_batch_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-assessment-field_crf_request'.
-  $fields['node-assessment-field_crf_request'] = array(
+  // Exported field: 'node-assessment-field_leading_organizations'.
+  $fields['node-assessment-field_leading_organizations'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_crf_request',
+      'field_name' => 'field_leading_organizations',
       'field_permissions' => array(
         'type' => '0',
       ),
@@ -37,7 +37,6 @@ function crf_assessments_batch_field_default_fields() {
       'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
-        'entity_translation_sync' => FALSE,
         'handler' => 'base',
         'handler_settings' => array(
           'behaviors' => array(
@@ -46,17 +45,13 @@ function crf_assessments_batch_field_default_fields() {
             ),
           ),
           'sort' => array(
-            'direction' => 'ASC',
-            'field' => 'field_asst_contact_email:email',
-            'property' => 'nid',
             'type' => 'none',
           ),
           'target_bundles' => array(
-            'crf_request' => 'crf_request',
+            'organizations' => 'organizations',
           ),
         ),
-        'handler_submit' => 'Change handler',
-        'target_type' => 'node',
+        'target_type' => 'taxonomy_term',
       ),
       'translatable' => '0',
       'type' => 'entityreference',
@@ -76,7 +71,13 @@ function crf_assessments_batch_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => '17',
+          'weight' => 27,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -86,20 +87,128 @@ function crf_assessments_batch_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_crf_request',
-      'label' => 'Request',
+      'entityconnect_unload_add' => '0',
+      'entityconnect_unload_edit' => '0',
+      'field_name' => 'field_leading_organizations',
+      'label' => 'Leading/Coordinating Organizations',
       'required' => 0,
       'settings' => array(
-        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
         'weight' => '1',
       ),
+      'workbench_access_field' => 0,
+    ),
+  );
+
+  // Exported field: 'node-assessment-field_part_organizations'.
+  $fields['node-assessment-field_part_organizations'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_part_organizations',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(
+            'organizations' => 'organizations',
+          ),
+        ),
+        'target_type' => 'taxonomy_term',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'assessment',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'diff_custom' => 0,
+            'diff_custom_settings' => array(),
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 28,
+        ),
+        'entityreference_view_widget' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'entityconnect_unload_add' => '0',
+      'entityconnect_unload_edit' => '0',
+      'field_name' => 'field_part_organizations',
+      'label' => 'Participating Organization(s)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'path' => '',
+          'size' => '60',
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '2',
+      ),
+      'workbench_access_field' => 0,
     ),
   );
 
@@ -477,6 +586,8 @@ function crf_assessments_batch_field_default_fields() {
   t('Assessments');
   t('Cluster');
   t('Comments');
+  t('Leading/Coordinating Organizations');
+  t('Participating Organization(s)');
   t('Request');
 
   return $fields;
