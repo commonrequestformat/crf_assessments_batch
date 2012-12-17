@@ -85,5 +85,27 @@ function crf_assessments_batch_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: view any unpublished assessment content.
+  $permissions['view any unpublished assessment content'] = array(
+    'name' => 'view any unpublished assessment content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'editor',
+      2 => 'manager',
+    ),
+    'module' => 'view_unpublished',
+  );
+
+  // Exported permission: view any unpublished assessments_batch content.
+  $permissions['view any unpublished assessments_batch content'] = array(
+    'name' => 'view any unpublished assessments_batch content',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'editor',
+      2 => 'manager',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   return $permissions;
 }
