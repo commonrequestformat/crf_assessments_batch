@@ -8,7 +8,6 @@ dependencies[] = crf_requests
 dependencies[] = entityconnect
 dependencies[] = entityreference
 dependencies[] = features
-dependencies[] = features_override
 dependencies[] = hr_graphs
 dependencies[] = hr_mapping_styles
 dependencies[] = humanitarianresponse_assessments
