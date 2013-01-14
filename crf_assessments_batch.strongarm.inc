@@ -41,27 +41,6 @@ function crf_assessments_batch_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_node_assessments_batch';
-  $strongarm->value = '1';
-  $export['auto_entitylabel_node_assessments_batch'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_pattern_node_assessments_batch';
-  $strongarm->value = '';
-  $export['auto_entitylabel_pattern_node_assessments_batch'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'auto_entitylabel_php_node_assessments_batch';
-  $strongarm->value = 0;
-  $export['auto_entitylabel_php_node_assessments_batch'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_assessments_batch';
   $strongarm->value = 0;
   $export['comment_anonymous_assessments_batch'] = $strongarm;

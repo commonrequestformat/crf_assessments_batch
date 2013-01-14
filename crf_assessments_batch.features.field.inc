@@ -22,11 +22,11 @@ function crf_assessments_batch_field_default_fields() {
         'type' => '0',
       ),
       'foreign keys' => array(
-        'node' => array(
+        'taxonomy_term_data' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'tid',
           ),
-          'table' => 'node',
+          'table' => 'taxonomy_term_data',
         ),
       ),
       'indexes' => array(
@@ -105,7 +105,7 @@ function crf_assessments_batch_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '1',
+        'weight' => '2',
       ),
       'workbench_access_field' => 0,
     ),
@@ -123,11 +123,11 @@ function crf_assessments_batch_field_default_fields() {
         'type' => '0',
       ),
       'foreign keys' => array(
-        'node' => array(
+        'taxonomy_term_data' => array(
           'columns' => array(
-            'target_id' => 'nid',
+            'target_id' => 'tid',
           ),
-          'table' => 'node',
+          'table' => 'taxonomy_term_data',
         ),
       ),
       'indexes' => array(
@@ -206,7 +206,7 @@ function crf_assessments_batch_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '2',
+        'weight' => '3',
       ),
       'workbench_access_field' => 0,
     ),
@@ -216,7 +216,7 @@ function crf_assessments_batch_field_default_fields() {
   $fields['node-assessments_batch-field_assessments'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_assessments',
@@ -286,18 +286,21 @@ function crf_assessments_batch_field_default_fields() {
       'entityconnect_unload_add' => '0',
       'entityconnect_unload_edit' => '0',
       'field_name' => 'field_assessments',
-      'label' => 'Provide One or More Assessments',
+      'label' => 'Assessments',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
+        'module' => 'entityreference',
         'settings' => array(
+          'match_operator' => 'CONTAINS',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'path' => '',
+          'size' => '60',
         ),
-        'type' => 'options_select',
+        'type' => 'entityreference_autocomplete',
         'weight' => '4',
       ),
       'workbench_access_field' => 0,
@@ -580,11 +583,11 @@ function crf_assessments_batch_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Assessments');
   t('Cluster');
   t('Comments');
   t('Leading/Coordinating Organizations');
   t('Participating Organization(s)');
-  t('Provide One or More Assessments');
   t('Request');
 
   return $fields;

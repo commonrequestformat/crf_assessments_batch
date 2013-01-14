@@ -22,18 +22,6 @@ function crf_assessments_batch_views_api() {
 }
 
 /**
- * Implements hook_field_default_fields_alter().
- */
-function crf_assessments_batch_field_default_fields_alter(&$data) {
-  if (isset($data['node-assessment-field_asst_participating_org'])) {
-    unset($data['node-assessment-field_asst_participating_org']);
-  }
-  if (isset($data['node-assessment-field_organizations'])) {
-    unset($data['node-assessment-field_organizations']);
-  }
-}
-
-/**
  * Implements hook_node_info().
  */
 function crf_assessments_batch_node_info() {

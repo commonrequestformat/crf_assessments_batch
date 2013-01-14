@@ -83,31 +83,33 @@ function crf_assessments_batch_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Broken/missing handler */
-  $handler->display->display_options['relationships']['field_assessments_nid']['id'] = 'field_assessments_nid';
-  $handler->display->display_options['relationships']['field_assessments_nid']['table'] = 'field_data_field_assessments';
-  $handler->display->display_options['relationships']['field_assessments_nid']['field'] = 'field_assessments_nid';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_assessments_target_id']['id'] = 'field_assessments_target_id';
+  $handler->display->display_options['relationships']['field_assessments_target_id']['table'] = 'field_data_field_assessments';
+  $handler->display->display_options['relationships']['field_assessments_target_id']['field'] = 'field_assessments_target_id';
+  $handler->display->display_options['relationships']['field_assessments_target_id']['label'] = 'Assessment';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
-  $handler->display->display_options['fields']['title_field']['relationship'] = 'field_assessments_nid';
+  $handler->display->display_options['fields']['title_field']['relationship'] = 'field_assessments_target_id';
   $handler->display->display_options['fields']['title_field']['label'] = 'Assessment Title';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Location */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'field_data_field_locations';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['relationship'] = 'field_assessments_nid';
+  $handler->display->display_options['fields']['field_locations']['relationship'] = 'field_assessments_target_id';
   $handler->display->display_options['fields']['field_locations']['label'] = 'Geographical Area(s) ';
   $handler->display->display_options['fields']['field_locations']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_locations']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
-  /* Field: Content: Source */
+  /* Field: Content: Organization(s) */
   $handler->display->display_options['fields']['field_organizations']['id'] = 'field_organizations';
   $handler->display->display_options['fields']['field_organizations']['table'] = 'field_data_field_organizations';
   $handler->display->display_options['fields']['field_organizations']['field'] = 'field_organizations';
-  $handler->display->display_options['fields']['field_organizations']['relationship'] = 'field_assessments_nid';
+  $handler->display->display_options['fields']['field_organizations']['relationship'] = 'field_assessments_target_id';
   $handler->display->display_options['fields']['field_organizations']['label'] = 'Leading/Coordinating Organizations';
   $handler->display->display_options['fields']['field_organizations']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_organizations']['type'] = 'taxonomy_term_reference_plain';
@@ -123,7 +125,7 @@ function crf_assessments_batch_views_default_views() {
   $handler->display->display_options['fields']['field_asst_start_date']['id'] = 'field_asst_start_date';
   $handler->display->display_options['fields']['field_asst_start_date']['table'] = 'field_data_field_asst_start_date';
   $handler->display->display_options['fields']['field_asst_start_date']['field'] = 'field_asst_start_date';
-  $handler->display->display_options['fields']['field_asst_start_date']['relationship'] = 'field_assessments_nid';
+  $handler->display->display_options['fields']['field_asst_start_date']['relationship'] = 'field_assessments_target_id';
   $handler->display->display_options['fields']['field_asst_start_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_asst_start_date']['settings'] = array(
     'format_type' => 'short',
@@ -136,13 +138,13 @@ function crf_assessments_batch_views_default_views() {
   $handler->display->display_options['fields']['field_asst_status']['id'] = 'field_asst_status';
   $handler->display->display_options['fields']['field_asst_status']['table'] = 'field_data_field_asst_status';
   $handler->display->display_options['fields']['field_asst_status']['field'] = 'field_asst_status';
-  $handler->display->display_options['fields']['field_asst_status']['relationship'] = 'field_assessments_nid';
+  $handler->display->display_options['fields']['field_asst_status']['relationship'] = 'field_assessments_target_id';
   $handler->display->display_options['fields']['field_asst_status']['element_label_colon'] = FALSE;
   /* Field: Content: Assessment Report */
   $handler->display->display_options['fields']['field_asst_report']['id'] = 'field_asst_report';
   $handler->display->display_options['fields']['field_asst_report']['table'] = 'field_data_field_asst_report';
   $handler->display->display_options['fields']['field_asst_report']['field'] = 'field_asst_report';
-  $handler->display->display_options['fields']['field_asst_report']['relationship'] = 'field_assessments_nid';
+  $handler->display->display_options['fields']['field_asst_report']['relationship'] = 'field_assessments_target_id';
   $handler->display->display_options['fields']['field_asst_report']['label'] = 'Report';
   $handler->display->display_options['fields']['field_asst_report']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_asst_report']['settings'] = array(
@@ -156,7 +158,7 @@ function crf_assessments_batch_views_default_views() {
   $handler->display->display_options['fields']['field_asst_questionnaire']['id'] = 'field_asst_questionnaire';
   $handler->display->display_options['fields']['field_asst_questionnaire']['table'] = 'field_data_field_asst_questionnaire';
   $handler->display->display_options['fields']['field_asst_questionnaire']['field'] = 'field_asst_questionnaire';
-  $handler->display->display_options['fields']['field_asst_questionnaire']['relationship'] = 'field_assessments_nid';
+  $handler->display->display_options['fields']['field_asst_questionnaire']['relationship'] = 'field_assessments_target_id';
   $handler->display->display_options['fields']['field_asst_questionnaire']['label'] = 'Questionnaire';
   $handler->display->display_options['fields']['field_asst_questionnaire']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_asst_questionnaire']['settings'] = array(
@@ -170,7 +172,7 @@ function crf_assessments_batch_views_default_views() {
   $handler->display->display_options['fields']['field_asst_data']['id'] = 'field_asst_data';
   $handler->display->display_options['fields']['field_asst_data']['table'] = 'field_data_field_asst_data';
   $handler->display->display_options['fields']['field_asst_data']['field'] = 'field_asst_data';
-  $handler->display->display_options['fields']['field_asst_data']['relationship'] = 'field_assessments_nid';
+  $handler->display->display_options['fields']['field_asst_data']['relationship'] = 'field_assessments_target_id';
   $handler->display->display_options['fields']['field_asst_data']['label'] = 'Data';
   $handler->display->display_options['fields']['field_asst_data']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_asst_data']['settings'] = array(
@@ -195,13 +197,6 @@ function crf_assessments_batch_views_default_views() {
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -276,7 +271,7 @@ function crf_assessments_batch_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('field_assessments_nid'),
+    t('Assessment'),
     t('Assessment Title'),
     t('Geographical Area(s) '),
     t('Leading/Coordinating Organizations'),
