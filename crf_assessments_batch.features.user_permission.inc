@@ -14,9 +14,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['create assessments_batch content'] = array(
     'name' => 'create assessments_batch content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -25,9 +25,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['delete any assessment content'] = array(
     'name' => 'delete any assessment content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -36,9 +36,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['delete any assessments_batch content'] = array(
     'name' => 'delete any assessments_batch content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -47,9 +47,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['delete own assessments_batch content'] = array(
     'name' => 'delete own assessments_batch content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -58,9 +58,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['edit any assessment content'] = array(
     'name' => 'edit any assessment content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -69,9 +69,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['edit any assessments_batch content'] = array(
     'name' => 'edit any assessments_batch content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -80,9 +80,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['edit own assessments_batch content'] = array(
     'name' => 'edit own assessments_batch content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'node',
   );
@@ -91,9 +91,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['view any unpublished assessment content'] = array(
     'name' => 'view any unpublished assessment content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'view_unpublished',
   );
@@ -102,9 +102,9 @@ function crf_assessments_batch_user_default_permissions() {
   $permissions['view any unpublished assessments_batch content'] = array(
     'name' => 'view any unpublished assessments_batch content',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'editor',
-      2 => 'manager',
+      'administrator' => 'administrator',
+      'editor' => 'editor',
+      'manager' => 'manager',
     ),
     'module' => 'view_unpublished',
   );
