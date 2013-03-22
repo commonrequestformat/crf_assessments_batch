@@ -96,7 +96,7 @@ function crf_assessments_batch_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = 'Assessment Title';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Content: Location */
+  /* Field: Field: Location */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'field_data_field_locations';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
@@ -205,7 +205,7 @@ function crf_assessments_batch_views_default_views() {
     'assessments_batch' => 'assessments_batch',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Location (field_locations) */
+  /* Filter criterion: Field: Location (field_locations) */
   $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
   $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
